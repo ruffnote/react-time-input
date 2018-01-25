@@ -103,6 +103,18 @@ class TimeInput extends Component {
             }
 
         } else {
+            if (val.length === 2 && this.lastVal.length !== 3 && val.indexOf(':') === -1) {
+                val = val + ':';
+            }
+
+            if (val.length === 2 && this.lastVal.length === 3) {
+                val = val.slice(0, 1);
+            }
+
+            if (val.length > 5) {
+                return false;
+            }
+
             this.props.onTimeChange(val, false);
         }
 
