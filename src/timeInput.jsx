@@ -99,9 +99,11 @@ class TimeInput extends Component {
             });
 
             if (val.length === 5) {
-                this.props.onTimeChange(val);
+                this.props.onTimeChange(val, true);
             }
 
+        } else {
+            this.props.onTimeChange(val, false);
         }
 
     }
